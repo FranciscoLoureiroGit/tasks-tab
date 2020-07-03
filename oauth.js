@@ -21,6 +21,7 @@ function getData(){
             .then((response) => response.json())
             .then(function(taskslists) {
                 let output = '';
+                let today = new Date().getDay();
                 console.log(taskslists);
                 taskslists.items.forEach(element => fetch(
                     'https://www.googleapis.com/tasks/v1/lists/' + element.id + '/tasks',
@@ -28,10 +29,14 @@ function getData(){
                     .then((response) => response.json())
                     .then(function (tasks) {
                         console.log(tasks);
-                        output += '<ul>' + element.title + '</ul>';
                         if(tasks.hasOwnProperty('items')){
-                            tasks.items.forEach(element =>
-                                output += '<li>' + element.title + '</li>');
+                            output += '<ul>' + element.title + '</ul>';
+                            tasks.items.forEach(element => {
+                                let taskdate = new Date(element.updated);
+                                if (taskdate.getDay() === today){
+                                    output += '<label onclick="completeTask()"><input type="checkbox" class="checkbox">' + element.title + '</label><br></<br><br></<br>'
+                                }
+                            });
                         }
                         $('#taskslists').html(output);
                     })
@@ -42,4 +47,8 @@ function getData(){
                 console.error(error);
             });
     });
+}
+
+function completeTask() {
+
 }
