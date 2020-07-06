@@ -9,12 +9,13 @@ label {
 
 body {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left:45%;
     color: #009688;
 }
 
 header {
+    margin-top: 30px;
     font-size: x-large;
 }
 

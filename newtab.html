@@ -4,9 +4,22 @@
     <title>New Tab</title>
     <script type="text/javascript" src="oauth.js"></script>
     <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="content.js"></script>
     <link rel="stylesheet" type="text/css" href="tasks.css">
 </head>
 <body style="background-color:lightgray;">
+<div>
+    <header>Tasklist:</header>
+    <label for="list"></label><select name="tasklist" id="list">
+    </select>
+</div>
+<div>
+    <header>Add new task:</header>
+    <label for="newtask">
+        <input id="newtask" type="text"/>
+    </label>
+    <input id="submit" type="submit" value="Submit">
+</div>
 <header>Today's tasks:</header>
 <div id="taskslists"></div>
 </body>
