@@ -167,6 +167,7 @@ function addTaskListener() {
         let title = document.getElementById("newtask").value;
         let taskListId = document.getElementById("list").value;
         addTask(taskListId,title);
+        document.getElementById("newtask").value = '';
     })
 }
 
