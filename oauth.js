@@ -181,6 +181,7 @@ function addSelectOnChange() {
 function checkTasklistOrder(taskslists) {
     let taskListsCache = sessionStorage.getItem('tasklists');
     let select = document.getElementById('list');
+    let previous = select.value;
 
     if ( !(JSON.stringify(taskslists) === taskListsCache)){
         sessionStorage.setItem('tasklists', JSON.stringify(taskslists));
@@ -197,5 +198,10 @@ function checkTasklistOrder(taskslists) {
             option.value = element.id;
             select.appendChild(option);
         });
+
+        //check selected tasklist
+        if (previous) {
+            document.getElementById('list').value = previous;
+        }
     }
 }
