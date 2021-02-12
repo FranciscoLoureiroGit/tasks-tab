@@ -10,6 +10,9 @@ Chrome extension that shows daily tasks in every new tab using [Google's Tasks A
 
 ![](/tasks-tab.gif?raw=true "Optional Title")
 
+#### Updated Google tasks:
+![](/img/image.png?raw=true)
+
 ## Description
 
 This was a quick side project where I wanted to check my daily tasks (Google Tasks) when opening a new tab. I learned how to make a basic chrome extension, how to use REST APIs and access google's API using the [OAuth 2.0 protocol](https://oauth.net/2/). Main language used was javascript.
